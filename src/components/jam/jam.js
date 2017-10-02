@@ -2,12 +2,20 @@ import React from 'react';
 import StyledJam from './styledJam';
 import AlbumArt from './albumArt/albumArt';
 
-const Jam = () => {
+const Jam = ({
+    track,
+    album,
+    albumArtUrl,
+    artist
+}) => {
     return (
         <StyledJam>
-            <AlbumArt/>
-            <span> No Signal </span>
-            <span> Homey </span>
+            <AlbumArt
+                albumArtUrl={albumArtUrl}
+            />
+            <span>{track}</span>
+            <span>{album}</span><br/>
+            <span>{artist}</span>
         </StyledJam>
     )
 };

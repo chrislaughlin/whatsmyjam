@@ -1,10 +1,10 @@
 import React from 'react';
 import StyledAlbumArt from './styledAlbumArt';
 
-const AlbumArt = () => {
+const AlbumArt = ({albumArtUrl}) => {
     return (
         <StyledAlbumArt
-            src="https://i.scdn.co/image/6f75aa0df2effb66ddd12e84f29970f9985ac11b"
+            src={albumArtUrl}
         />
     );
 };
