@@ -1,7 +1,7 @@
 {
   "name": "whatsmyjam",
-  "version": "1.0.0",
-  "description": "Describe whatsmyjam here",
+  "version": "0.0.0",
+  "description": "Display my currently played Spotify song",
   "private": true,
   "scripts": {
     "build": "nwb build-react-app",
@@ -18,7 +18,7 @@
   "devDependencies": {
     "nwb": "0.19.x"
   },
-  "author": "",
+  "author": "Chris Laughlin",
   "license": "MIT",
   "repository": ""
 }
