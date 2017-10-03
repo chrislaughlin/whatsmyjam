@@ -1,13 +1,10 @@
 import React, {Component} from 'react'
-import SpotifyWebApi from 'spotify-web-api-js';
+const SpotifyWebApi = require('spotify-web-api-node');
 
 import './App.css'
 import ViewContainer from './components/viewContainer/viewContainer';
-import accessToken from './config/accessToken';
+import access from './config/accessToken';
 
-
-const spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken(accessToken);
 
 class App extends Component {
     state = {
@@ -21,17 +18,23 @@ class App extends Component {
     };
 
     componentDidMount() {
-        spotifyApi.getMyCurrentPlayingTrack().then(({item}) => {
-            this.setState({
-                currentJam: {
-                    track: item.name,
-                    album: item.album.name,
-                    albumArtUrl: item.album.images[1].url,
-                    artist: item.artists[0].name,
-                    link: item.href
-                }
-            });
+        // credentials are optional
+        var spotifyApi = new SpotifyWebApi({
+            clientId : access.client_id,
+            clientSecret : access.client_secret
         });
+
+        spotifyApi.clientCredentialsGrant()
+            .then(function(data) {
+                console.log('The access token expires in ' + data.body['expires_in']);
+                console.log('The access token is ' + data.body['access_token']);
+
+                // Save the access token so that it's used in future calls
+                spotifyApi.setAccessToken(data.body['access_token']);
+            }, function(err) {
+                console.log('Something went wrong when retrieving an access token', err);
+            });
+
     }
 
     render() {

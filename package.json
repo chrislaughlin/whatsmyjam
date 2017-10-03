@@ -12,11 +12,12 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "axios": "^0.16.2",
+    "prop-types": "latest",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "spotify-web-api-js": "^0.22.1",
-    "styled-components": "^2.2.0",
-    "prop-types": "latest"
+    "spotify-web-api-node": "^2.5.0",
+    "styled-components": "^2.2.0"
   },
   "devDependencies": {
     "nwb": "0.19.x"

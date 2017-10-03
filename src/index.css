@@ -11,3 +11,10 @@ body {
     padding: 0;
     background: #f037a5 linear-gradient(#fae62d -30%, #f037a5 150%);
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
