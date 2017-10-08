@@ -1,0 +1,1 @@
+export const setCurrentJam = jam => state => ({...state, currentJam: jam});

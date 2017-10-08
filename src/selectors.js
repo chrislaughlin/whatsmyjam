@@ -1,0 +1,1 @@
+export const currentJamSector = state => ({currentJam: state.currentJam});
