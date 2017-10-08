@@ -3,19 +3,35 @@ import StyledJam from './styledJam';
 import AlbumArt from './albumArt/albumArt';
 
 const Jam = ({
-    track,
     album,
-    albumArtUrl,
-    artist
+    track,
+    artist,
+    albumArtUrl
 }) => {
     return (
         <StyledJam>
             <AlbumArt
                 albumArtUrl={albumArtUrl}
             />
-            <span>{track}</span>
-            <span>{album}</span><br/>
-            <span>{artist}</span>
+            <a
+                href={track.link}
+                target="_blank"
+            >
+                {track.name}
+                </a>
+            <a
+                href={album.link}
+                target="_blank"
+            >
+                {album.name}
+                </a>
+            <br/>
+            <a
+                href={artist.link}
+                target="_blank"
+            >
+                {artist.name}
+                </a>
         </StyledJam>
     )
 };

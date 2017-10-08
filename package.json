@@ -31,5 +31,8 @@
   },
   "author": "Chris Laughlin",
   "license": "MIT",
-  "repository": ""
+  "repository": "",
+  "now": {
+    "alias": "whats-my-jam.now.sh"
+  }
 }

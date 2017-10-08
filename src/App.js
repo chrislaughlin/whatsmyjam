@@ -26,13 +26,7 @@ class App extends Component {
 
     static propTypes = {
         update: PropTypes.func.isRequired,
-        currentJam: PropTypes.shape({
-            track: PropTypes.string.isRequired,
-            album: PropTypes.string.isRequired,
-            albumArtUrl: PropTypes.string.isRequired,
-            link: PropTypes.string.isRequired,
-            artist: PropTypes.string.isRequired
-        })
+        currentJam: PropTypes.object
     };
 
     componentDidMount() {
@@ -44,24 +38,14 @@ class App extends Component {
     }
 
     render() {
-        const {
-            currentJam: {
-                track,
-                album,
-                albumArtUrl,
-                link,
-                artist
-            }
-        } =  this.props;
-        return (
-            <ViewContainer
-                track={track}
-                album={album}
-                albumArtUrl={albumArtUrl}
-                link={link}
-                artist={artist}
-            />
-        )
+        if (this.props.currentJam) {
+            return (
+                <ViewContainer
+                    currentJam={this.props.currentJam}
+                />
+            )
+        }
+        return <div/>;
     }
 }
 
