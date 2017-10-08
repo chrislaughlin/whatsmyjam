@@ -3,9 +3,11 @@ import StyledAlbumArt from './styledAlbumArt';
 
 const AlbumArt = ({albumArtUrl}) => {
     return (
-        <StyledAlbumArt
-            src={albumArtUrl}
-        />
+        albumArtUrl !== '' ?
+            <StyledAlbumArt
+                src={albumArtUrl}
+            /> :
+            <div/>
     );
 };
 

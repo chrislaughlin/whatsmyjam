@@ -1,5 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { slideInLeft } from 'react-animations';
+
+const bounceAnimation = keyframes`${slideInLeft}`;
 
 export default styled.header`
     font-family: 'Fugaz One', cursive;
@@ -7,4 +10,5 @@ export default styled.header`
     color: white;
     text-align: center;
     text-shadow: 12px 5px 7px #D9CFB2;
+    animation: 1s ${bounceAnimation};
 `;
