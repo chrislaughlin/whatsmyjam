@@ -29,25 +29,6 @@ app.use(function(req, res, next) {
     next()
 });
 
-app.get('/api/jam', function(req, res) {
-    //TODO: use real API
-    res.json({
-        album: {
-            name : "The Main Squeeze",
-            link : "https://open.spotify.com/artist/5I6ni4YWY0WJUs6rFqufxT",
-            albumArtUrl: 'https://i.scdn.co/image/b78e0a4fae59bb0d37916137abb53c2f5b08eaea',
-        },
-        track: {
-            name: 'I\'ll Take Another',
-            link: 'https://open.spotify.com/track/75Wpcg8OAyOHMwgdJCgRpe'
-        },
-        artist: {
-            link: 'https://open.spotify.com/artist/5I6ni4YWY0WJUs6rFqufxT',
-            name: 'The Main Squeeze'
-        }
-    });
-});
-
 app.listen(app.get('port'), function() {
     console.log('Server started: http://localhost:' + app.get('port') + '/')
 });

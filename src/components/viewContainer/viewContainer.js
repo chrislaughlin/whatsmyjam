@@ -12,6 +12,13 @@ const ViewContainer = ({
 }) => {
     return (
         <StyledViewContainer>
+            {
+                !album &&
+                <b>
+                    Allow popups to log into Spotify and see your jam. <br/>
+                    Refresh the page after you allow popups
+                </b>
+            }
             <Hero/>
             <Jam
                 track={track}
